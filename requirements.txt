@@ -1,0 +1,11 @@
+torch
+transformers
+accelerate
+bitsandbytes
+Pillow
+pycocotools
+requests
+tqdm
+notebook
+matplotlib
+nltk
