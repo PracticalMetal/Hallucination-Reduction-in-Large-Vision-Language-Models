@@ -108,7 +108,7 @@ if __name__ == "__main__":
     YOUR_COEFF_V = 2.0
     # -----------------------------------------
 
-    NUM_EVAL_IMAGES = 100 # Set this to a number you are comfortable with. 500 is a good start.
+    NUM_EVAL_IMAGES = 5000 # Set this to a number you are comfortable with. 500 is a good start.
     PROMPT_TEXT = "Describe this image in detail."
 
     # Define output file paths
@@ -150,7 +150,7 @@ if __name__ == "__main__":
     steered_results = []
     for image_id in tqdm(image_ids, desc="Steered Generation"):
         img_info = coco.loadImgs(image_id)
-        image_path = os.path.join(IMAGE_DIR, img_info['file_name'])
+        image_path = os.path.join(IMAGE_DIR, img_info[0]['file_name'])
         image = Image.open(image_path).convert("RGB")
         
         caption = generate_with_steering(
