@@ -171,12 +171,6 @@ if __name__ == "__main__":
     }
     
     df = pd.DataFrame(data).T
-    # Format only float columns to two decimal places
-    # for col in df.select_dtypes(include='float'):
-    #     df[col] = df[col].map('{:.2f}'.format)
-    # df = df.map('{:.2f}'.format)
-    
-    # print(df)
     print(df.to_string(float_format="%.2f"))
     
     # You must access the specific numeric values *inside* the dictionary

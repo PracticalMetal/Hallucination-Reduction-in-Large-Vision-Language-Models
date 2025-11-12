@@ -77,7 +77,7 @@ if __name__ == "__main__":
 
     # --- Configuration ---
     # Start with a small number, then increase to ~200-300 for the final run
-    NUM_IMAGES_TO_PROCESS = 200  
+    NUM_IMAGES_TO_PROCESS = 5000  
     PROMPT_FOR_GENERATION = "Describe this image in detail."
 
     results = []

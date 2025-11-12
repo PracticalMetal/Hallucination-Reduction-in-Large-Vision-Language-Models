@@ -104,11 +104,11 @@ if __name__ == "__main__":
     
     # ---!! SET YOUR OPTIMAL VALUES HERE!! ---
     # Use the best-performing values you found during verification
-    YOUR_COEFF_K = 0.1 
-    YOUR_COEFF_V = 2.0
+    YOUR_COEFF_K = 0.5 
+    YOUR_COEFF_V = 4
     # -----------------------------------------
 
-    NUM_EVAL_IMAGES = 5000 # Set this to a number you are comfortable with. 500 is a good start.
+    NUM_EVAL_IMAGES = 2000
     PROMPT_TEXT = "Describe this image in detail."
 
     # Define output file paths
@@ -119,7 +119,9 @@ if __name__ == "__main__":
     # Load model and data
     model, processor = load_llava_model()
     coco = COCO(ANNOTATION_FILE)
-    image_ids = coco.getImgIds()[:NUM_EVAL_IMAGES] # Limit to NUM_EVAL_IMAGES
+    # image_ids = sorted(coco.getImgIds())[:NUM_EVAL_IMAGES] # Limit to NUM_EVAL_IMAGES
+    image_ids = sorted(coco.getImgIds()) # Limit to NUM_EVAL_IMAGES
+
     
     # Load steering vectors
     steering_vectors_k_cpu = torch.load(os.path.join(STEERING_VECTORS_DIR, 'steering_vectors_k.pt'))
